@@ -2,9 +2,18 @@
 
 This project inspired on [syte](https://github.com/rigoneri/syte), but using PHP and Markdown to manage posts
 
+
+
+### Install
+
+    composer create-project flaviozantut/skorry skorry 0.0.1-beta
+
+
+
+
 ### Changelog
 
-* v0.0.1
+* version 0.0.1-beta
  * markdown post manager
  * make post from command line
  * simple style customization
