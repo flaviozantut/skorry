@@ -6,7 +6,16 @@ This project inspired on [syte](https://github.com/rigoneri/syte), but using PHP
 
 ### Install
 
-    composer create-project flaviozantut/skorry skorry 0.0.1-dev
+    curl -s http://getcomposer.org/installer | php
+    composer.phar create-project flaviozantut/skorry skorry dev-master
+    cd skorry
+    php artisan post:make
+    php artisan serve
+
+Change 'app/config/skorry.php' for your informations, replace 'public/images' favicon.ico and profile.jpg.
+
+Your personal page will be ready!
+
 
 
 
