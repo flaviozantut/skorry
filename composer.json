@@ -1,0 +1,61 @@
+{
+	"name": "flaviozantut/skorry",
+	"description": "Make fast your personal site!",
+	"keywords": ["personal site", "page", "blog", "laravel"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "flaviozantut",
+            "email": "flaviozantut@gmail.com"
+        }
+    ],
+	"require": {
+		"laravel/framework": "4.1.*",
+		"erusev/parsedown": "dev-master",
+		"symfony/yaml": "2.3.*",
+		"kriswallsmith/assetic": "dev-master",
+		"leafo/scssphp": "0.0.7",
+        "leafo/lessphp": "dev-master",
+        "ptachoire/cssembed" :"dev-master",
+        "natxet/cssmin": "dev-master"
+	},
+	"autoload": {
+		"classmap": [
+			"app/commands",
+			"app/controllers",
+			"app/models",
+			"app/database/migrations",
+			"app/database/seeds",
+			"app/lib",
+			"app/tests/TestCase.php"
+		]
+	},
+	"scripts": {
+		"post-install-cmd": [
+			"php artisan optimize"
+		],
+		"pre-update-cmd": [
+			"php artisan clear-compiled",
+            "php artisan cache:clear",
+            "php artisan assets:clear"
+		],
+		"post-update-cmd": [
+			"php artisan optimize"
+		],
+		"post-create-project-cmd": [
+			"php artisan key:generate"
+		]
+	},
+	"config": {
+		"preferred-install": "dist"
+	},
+	"minimum-stability": "dev",
+	"require-dev": {
+		"phpunit/phpunit": "3.7.*",
+        "theseer/phpdox": "dev-master",
+        "phploc/phploc": "*",
+        "sebastian/phpcpd": "*",
+        "theseer/phpdox": "dev-master",
+        "phpmd/phpmd": "dev-master"
+	}
+}

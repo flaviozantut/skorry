@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<phpdox xmlns="http://phpdox.de/config" silent="false">
+
+    <require file="${basedir}/bootstrap/autoload.php" />
+    <bootstrap >
+        <require file="bootstrap/autoload.php" />
+    </bootstrap>
+    <project name="Skorry" source="${basedir}/app" workdir="${basedir}/build/api/xml">
+
+        <collector publiconly="false" backend="parser" />
+
+        <generator output="${basedir}/build/api/docs">
+
+            <enrich base="${basedir}/build/logs">
+                <!-- <source type="checkstyle" /> -->
+                <source type="pmd" />
+                <source type="phpunit" />
+
+            </enrich>
+
+            <build engine="html" enabled="true" output="html">
+                <template dir="${phpDox.home}/templates/html" />
+                <file extension="xhtml" />
+            </build>
+
+            <build engine="todo" enabled="false" output="todo">
+                <file name="todolist.txt" encoding="utf-8" />
+            </build>
+
+            <build engine="graph" enabled="true" output="graph" />
+
+        </generator>
+    </project>
+</phpdox>
+
