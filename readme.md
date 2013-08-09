@@ -6,14 +6,14 @@ This project inspired on [syte](https://github.com/rigoneri/syte), but using PHP
 
 ### Install
 
-    composer create-project flaviozantut/skorry skorry 0.0.1-beta
+    composer create-project flaviozantut/skorry skorry 0.0.1-dev
 
 
 
 
 ### Changelog
 
-* version 0.0.1-beta
+* version 0.0.1-dev
  * markdown post manager
  * make post from command line
  * simple style customization
