@@ -89,7 +89,7 @@ Route::filter('etag', function($route, $request, $response){
 
 Route::filter('html_minify', function($route, $request, $response){
     if (App::environment()!='local') {
-         $response->setContent(preg_replace(
+        $response->setContent(preg_replace(
             array(
                 '/ {2,}/',
                 '/<!--.*?-->|\t|(?:\r?\n[ \t]*)+/s'
@@ -100,7 +100,7 @@ Route::filter('html_minify', function($route, $request, $response){
             ),
             $response->getContent()
         ));
-        return  $response;
+        return $response;
     }
     return;
 });

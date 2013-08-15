@@ -30,7 +30,7 @@ View::composer('layouts._header', function($view) {
 });
 
 
-Route::group(array('before' => 'cache', 'after' => 'cache|html_minify'), function()
+Route::group(array('before' => 'cache', 'after' => 'cache'), function()
 {
     Route::get('/', 'PostController@articles');
     Route::get('/{type}/{permalink}','PostController@get')->where('type', 'article|page|draft');
