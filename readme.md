@@ -1,4 +1,6 @@
-# skorry - Make fast your personal site!
+## skorry - Make fast your personal site!
+
+---
 
 This project inspired on [syte](https://github.com/rigoneri/syte), but using PHP and Markdown to manage posts
 
@@ -12,12 +14,82 @@ This project inspired on [syte](https://github.com/rigoneri/syte), but using PHP
     php artisan post:make
     php artisan serve
 
-Change 'app/config/skorry.php' for your informations, replace 'public/images' favicon.ico and profile.jpg.
-
-Your personal page will be ready!
 
 
+### Update informations
 
+    /*
+     * open app/config/skorry.php
+     * and replace to your informations
+     */
+
+    return array(
+        /*
+        |--------------------------------------------------------------------------
+        | Titles
+        |--------------------------------------------------------------------------
+        |
+        */
+        'title' => 'Flávio Zantut',
+        'subtitle' => 'Web Developer',
+
+        /*
+        |--------------------------------------------------------------------------
+        | Social
+        |--------------------------------------------------------------------------
+        |
+        */
+        "github" => "https://github.com/flaviozantut",
+        "foursquare" => "https://foursquare.com/user/3328297",
+        "instagram" => "http://instagram.com/flaviozantut",
+        "google-plus" => "https://plus.google.com/112100489080294287923",
+        "linkedin" => "http://www.linkedin.com/in/desenvolvedorweb",
+        "twitter" => "https://twitter.com/flaviozantut",
+        "facebook" => "",
+        "pinterest" => "",
+        "stackexchange" => "",
+        "bitbucket" => "",
+
+        /*
+        |--------------------------------------------------------------------------
+        | Comments
+        |--------------------------------------------------------------------------
+        |
+        */
+        "disqus" => "flaviopw",
+
+        /*
+        |--------------------------------------------------------------------------
+        | analytics
+        |--------------------------------------------------------------------------
+        |
+        */
+        "analytics" => "UA-10815887-4",
+
+
+
+### Custom style
+
+    /*
+     * open app/assets/less/tools/vars.less
+     * and set your custom colors values
+     */
+
+    @gn-menu-bg: #efefef;
+    @card-bg: lighten(@gn-menu-bg, 3);
+    @link-collor: #546d7a;
+    @link-active-collor: lighten(@link-collor, 16);
+
+    @bg-collor: #546d7a;
+    @default-shadow-collor: transparent;
+
+    @footer-collor: lighten(#546d7a, 20);
+
+Replace 'public/images' favicon.ico and profile.jpg.
+
+### Your personal page will be ready!
+
+-----
 
 
 ### Changelog

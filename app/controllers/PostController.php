@@ -17,6 +17,10 @@ class PostController extends \BaseController
     {
         $current = Input::get('page', 1) - 1;
         $articles = array_chunk($this->post->all('article'), Config::get('skorry.paginate'));
+        if (!count($articles)) {
+            $data =  (new \Parsedown)->parse(\File::get(base_path() . '/readme.md'));
+            return View::make('hello', compact('data'));
+        }
         if (!array_key_exists($current, $articles)) {
             App::abort(404);
         }

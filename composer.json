@@ -10,6 +10,7 @@
         }
     ],
 	"require": {
+        "ext-mcrypt" : "*",
 		"laravel/framework": "4.1.*",
 		"erusev/parsedown": "dev-master",
 		"symfony/yaml": "2.3.*",
