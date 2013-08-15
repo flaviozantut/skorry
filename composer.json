@@ -10,6 +10,7 @@
         }
     ],
 	"require": {
+        "php": ">=5.4.0",
         "ext-mcrypt" : "*",
 		"laravel/framework": "4.1.*",
 		"erusev/parsedown": "dev-master",
