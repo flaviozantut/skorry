@@ -1,5 +1,9 @@
 ## skorry - Make fast your personal site!
 
+[![Latest Stable Version](https://poser.pugx.org/flaviozantut/skorry/v/stable.png)](https://packagist.org/packages/flaviozantut/skorry)
+
+[![Total Downloads](https://poser.pugx.org/flaviozantut/skorry/downloads.png)](https://packagist.org/packages/flaviozantut/skorry)
+
 ---
 
 This project inspired on [syte](https://github.com/rigoneri/syte), but using PHP and Markdown to manage posts
@@ -9,7 +13,7 @@ This project inspired on [syte](https://github.com/rigoneri/syte), but using PHP
 ### Install
 
     curl -s http://getcomposer.org/installer | php
-    composer.phar create-project flaviozantut/skorry skorry dev-master
+    composer.phar create-project flaviozantut/skorry skorry
     cd skorry
     php artisan post:make
     php artisan serve
