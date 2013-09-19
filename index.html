@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Skorry by flaviozantut</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Skorry</h1>
+          <h2>skorry - Make fast your personal site!</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/flaviozantut/skorry/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/flaviozantut/skorry/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/flaviozantut/skorry" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h2>
+<a name="skorry---make-fast-your-personal-site" class="anchor" href="#skorry---make-fast-your-personal-site"><span class="octicon octicon-link"></span></a>skorry - Make fast your personal site!</h2>
+
+<p><a href="https://packagist.org/packages/flaviozantut/skorry"><img src="https://poser.pugx.org/flaviozantut/skorry/v/stable.png" alt="Latest Stable Version"></a></p>
+
+<p><a href="https://packagist.org/packages/flaviozantut/skorry"><img src="https://poser.pugx.org/flaviozantut/skorry/downloads.png" alt="Total Downloads"></a></p>
+
+<hr><p>This project inspired on <a href="https://github.com/rigoneri/syte">syte</a>, but using PHP and Markdown to manage posts</p>
+
+<h3>
+<a name="install" class="anchor" href="#install"><span class="octicon octicon-link"></span></a>Install</h3>
+
+<pre><code>curl -s http://getcomposer.org/installer | php
+composer.phar create-project flaviozantut/skorry skorry
+cd skorry
+php artisan post:make
+php artisan serve
+</code></pre>
+
+<h3>
+<a name="update-informations" class="anchor" href="#update-informations"><span class="octicon octicon-link"></span></a>Update informations</h3>
+
+<pre><code>/*
+ * open app/config/skorry.php
+ * and replace to your informations
+ */
+
+return array(
+    /*
+    |--------------------------------------------------------------------------
+    | Titles
+    |--------------------------------------------------------------------------
+    |
+    */
+    'title' =&gt; 'Flávio Zantut',
+    'subtitle' =&gt; 'Web Developer',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Social
+    |--------------------------------------------------------------------------
+    |
+    */
+    "github" =&gt; "https://github.com/flaviozantut",
+    "foursquare" =&gt; "https://foursquare.com/user/3328297",
+    "instagram" =&gt; "http://instagram.com/flaviozantut",
+    "google-plus" =&gt; "https://plus.google.com/112100489080294287923",
+    "linkedin" =&gt; "http://www.linkedin.com/in/desenvolvedorweb",
+    "twitter" =&gt; "https://twitter.com/flaviozantut",
+    "facebook" =&gt; "",
+    "pinterest" =&gt; "",
+    "stackexchange" =&gt; "",
+    "bitbucket" =&gt; "",
+
+    /*
+    |--------------------------------------------------------------------------
+    | Comments
+    |--------------------------------------------------------------------------
+    |
+    */
+    "disqus" =&gt; "flaviopw",
+
+    /*
+    |--------------------------------------------------------------------------
+    | analytics
+    |--------------------------------------------------------------------------
+    |
+    */
+    "analytics" =&gt; "UA-10815887-4",
+</code></pre>
+
+<h3>
+<a name="custom-style" class="anchor" href="#custom-style"><span class="octicon octicon-link"></span></a>Custom style</h3>
+
+<pre><code>/*
+ * open app/assets/less/tools/vars.less
+ * and set your custom colors values
+ */
+
+@gn-menu-bg: #efefef;
+@card-bg: lighten(@gn-menu-bg, 3);
+@link-collor: #546d7a;
+@link-active-collor: lighten(@link-collor, 16);
+
+@bg-collor: #546d7a;
+@default-shadow-collor: transparent;
+
+@footer-collor: lighten(#546d7a, 20);
+</code></pre>
+
+<p>Replace 'public/images' favicon.ico and profile.jpg.</p>
+
+<h3>
+<a name="your-personal-page-will-be-ready" class="anchor" href="#your-personal-page-will-be-ready"><span class="octicon octicon-link"></span></a>Your personal page will be ready!</h3>
+
+<hr><h3>
+<a name="changelog" class="anchor" href="#changelog"><span class="octicon octicon-link"></span></a>Changelog</h3>
+
+<ul>
+<li>version 0.0.1-dev
+
+<ul>
+<li>markdown post manager</li>
+<li>make post from command line</li>
+<li>simple style customization</li>
+<li>dump assets on static files</li>
+</ul>
+</li>
+</ul><h3>
+<a name="roadmap" class="anchor" href="#roadmap"><span class="octicon octicon-link"></span></a>Roadmap</h3>
+
+<ol>
+<li>enable tags</li>
+<li>rss</li>
+<li>move assets manager to external package</li>
+<li>get posts from dropbox</li>
+<li>get posts from google drive</li>
+<li>github api integration</li>
+<li>twitter api integration</li>
+<li>bitbucket api integration</li>
+<li>google-plus api integration</li>
+<li>linkedin api integration</li>
+<li>instagram api integration</li>
+<li>facebook api integration</li>
+<li>foursquare api integration</li>
+<li>pinterest api integration</li>
+</ol>
+        </section>
+
+        <footer>
+          Skorry is maintained by <a href="https://github.com/flaviozantut">flaviozantut</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
