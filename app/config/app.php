@@ -103,7 +103,6 @@ return array(
         'Illuminate\Foundation\Providers\PublisherServiceProvider',
         'Illuminate\Queue\QueueServiceProvider',
         'Illuminate\Redis\RedisServiceProvider',
-        'Illuminate\Remote\RemoteServiceProvider',
         'Illuminate\Auth\Reminders\ReminderServiceProvider',
         'Illuminate\Foundation\Providers\RouteListServiceProvider',
         'Illuminate\Database\SeedServiceProvider',
