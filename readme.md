@@ -4,6 +4,12 @@
 
 [![Total Downloads](https://poser.pugx.org/flaviozantut/skorry/downloads.png)](https://packagist.org/packages/flaviozantut/skorry)
 
+[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/flaviozantut/skorry/badges/quality-score.png?s=c3c33757acb99bd4a7f0c7fdcb6109fef80da524)](https://scrutinizer-ci.com/g/flaviozantut/skorry/)
+
+[![Code Coverage](https://scrutinizer-ci.com/g/flaviozantut/skorry/badges/coverage.png?s=4245049f6158c38b8f17ec9b1924d7993219a99a)](https://scrutinizer-ci.com/g/flaviozantut/skorry/)
+
+[![Build Status](https://drone.io/github.com/flaviozantut/skorry/status.png)](https://drone.io/github.com/flaviozantut/skorry/latest)
+
 ---
 
 This project inspired on [syte](https://github.com/rigoneri/syte), but using PHP and Markdown to manage posts
