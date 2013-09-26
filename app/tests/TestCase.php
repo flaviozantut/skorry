@@ -18,7 +18,7 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
 
     public function getFixture($name)
     {
-        return __DIR__ . '/_fixtures/';
+        return sys_get_temp_dir() . '/';
     }
 
 }
