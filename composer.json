@@ -53,12 +53,7 @@
     },
     "minimum-stability": "dev",
     "require-dev": {
-        "phpunit/phpunit": "3.7.*",
-        "theseer/phpdox": "dev-master",
-        "phploc/phploc": "*",
-        "sebastian/phpcpd": "*",
-        "theseer/phpdox": "dev-master",
-        "phpmd/phpmd": "dev-master"
+        "phpunit/phpunit": "3.7.*"
     },
     "extra": {
         "branch-alias": {
