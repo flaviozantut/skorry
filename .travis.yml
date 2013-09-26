@@ -1,0 +1,15 @@
+language: php
+
+php:
+  - 5.4
+
+before_script:
+  - curl -s http://getcomposer.org/installer | php
+  - curl -s http://getcomposer.org/installer | php
+  - php composer.phar install --dev --prefer-source
+
+script:
+  - ./vendor/bin/phpunit --coverage-clover=coverage.clover
+
+after_script:
+  - php ocular.phar code-coverage:upload --access-token="6e0dfce483df5e8734e2c5dc8a09260b7408ec9f19bed4091df8543bb7d373d7" --format=php-clover coverage.clover
