@@ -1,5 +1,9 @@
 ## skorry - Make fast your personal site!
 
+[![Print Screen](https://dl.dropboxusercontent.com/u/20652183/skorry.png)](https://dl.dropboxusercontent.com/u/20652183/skorry.png)
+
+---
+
 [![Latest Stable Version](https://poser.pugx.org/flaviozantut/skorry/v/stable.png)](https://packagist.org/packages/flaviozantut/skorry)
 
 [![Total Downloads](https://poser.pugx.org/flaviozantut/skorry/downloads.png)](https://packagist.org/packages/flaviozantut/skorry)
