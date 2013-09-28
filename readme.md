@@ -1,6 +1,6 @@
 ## skorry - Make fast your personal site!
 
-[![Print Screen](https://dl.dropboxusercontent.com/u/20652183/skorry.png)](https://dl.dropboxusercontent.com/u/20652183/skorry.png)
+[![Print Screen](https://dl.dropboxusercontent.com/u/20652183/skorry.png)](http://flavio.pw)
 
 ---
 
