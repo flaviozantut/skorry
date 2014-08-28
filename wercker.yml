@@ -10,3 +10,5 @@ build:
       - script:
           name: run unit tests
           code: phpunit
+      - mbrevda/php-lint@0.1.11
+      - mbrevda/phpcs@0.0.10
