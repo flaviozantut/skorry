@@ -11,4 +11,4 @@ build:
           name: run unit tests
           code: phpunit
       - vinietje/phplint-build:
-        php_directory: $DIRECTORY/app/
+          php_directory: app/
