@@ -10,7 +10,3 @@ build:
       - script:
           name: run unit tests
           code: phpunit
-      # Add more steps here:
-      - script:
-          name: run unit tests
-          code: phpunit
