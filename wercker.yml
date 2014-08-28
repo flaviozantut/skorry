@@ -1,0 +1,16 @@
+box: wercker/php
+build:
+    # The steps that will be executed on build
+    steps:
+      # A custom script step, name value is used in the UI
+      # and the code value contains the command that get executed
+      - script:
+          name: install dependencies
+          code: composer install --no-interaction --prefer-source
+      - script:
+          name: run unit tests
+          code: phpunit
+      # Add more steps here:
+      - script:
+          name: run unit tests
+          code: phpunit
