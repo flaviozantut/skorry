@@ -1,4 +1,5 @@
 <?php
+
 use Flaviozantut\Storage\Posts\PostRepositoryInterface;
 
 class PostController extends \BaseController
@@ -18,7 +19,8 @@ class PostController extends \BaseController
         $current = Input::get('page', 1) - 1;
         $articles = array_chunk($this->post->all('article'), Config::get('skorry.paginate'));
         if (!count($articles)) {
-            $data =  (new \Parsedown)->parse(\File::get(base_path() . '/readme.md'));
+            $data = (new \Parsedown())->parse(\File::get(base_path().'/readme.md'));
+
             return View::make('hello', compact('data'));
         }
         if (!array_key_exists($current, $articles)) {
@@ -26,19 +28,18 @@ class PostController extends \BaseController
         }
         $articles = $articles[$current];
         $paginator = Paginator::make($articles, count($this->post->all('article')), Config::get('skorry.paginate'));
-        return View::make('posts.articles', compact('articles','paginator'));
 
+        return View::make('posts.articles', compact('articles', 'paginator'));
     }
 
     public function get($type, $permalink)
     {
-        $article = $this->post->find(['permalink'=>$permalink]);
+        $article = $this->post->find(['permalink' => $permalink]);
 
         if ($article->type != $type) {
             App::abort(404);
         }
+
         return View::make('posts.post', compact('article'));
-
     }
-
 }

@@ -2,14 +2,13 @@
 
 namespace Flaviozantut\Storage\Posts;
 
-use Flaviozantut\Storage\Posts\PostRepositoryInterface;
-use Symfony\Component\Yaml\Yaml;
-use Flaviozantut\Parser;
-use StdClass;
+use Config;
+use DOMDocument;
 use Exception;
 use File;
-use Config;
-use  DOMDocument;
+use Flaviozantut\Parser;
+use StdClass;
+use  Symfony\Component\Yaml\Yaml;
 
 class FilePostRepository implements PostRepositoryInterface
 {
@@ -18,16 +17,17 @@ class FilePostRepository implements PostRepositoryInterface
 
     public function __construct($directory = null)
     {
-        $this->parser =  new Parser;
+        $this->parser = new Parser();
         $this->directory = $directory;
     }
+
     public function intro($post)
     {
         if (!$post) {
-            return "";
+            return '';
         }
         $doc = new DOMDocument();
-        $doc->loadHTML(mb_convert_encoding($post, 'HTML-ENTITIES', "UTF-8"));
+        $doc->loadHTML(mb_convert_encoding($post, 'HTML-ENTITIES', 'UTF-8'));
 
         /* Gets all the paragraphs */
         $p = $doc->getElementsByTagName('p');
@@ -40,7 +40,6 @@ class FilePostRepository implements PostRepositoryInterface
         /* returns the paragraph's content */
 
         return $p->textContent;
-
     }
 
     public function all($type = null)
@@ -55,7 +54,7 @@ class FilePostRepository implements PostRepositoryInterface
             if ($type and $type !=  $this->parser->metadata('type')) {
                 continue;
             }
-            $row =  new StdClass();
+            $row = new StdClass();
             $row->id = $file;
             $row->post = $this->parser->content();
 
@@ -68,9 +67,8 @@ class FilePostRepository implements PostRepositoryInterface
             $row->tags = $this->parser->metadata('tags');
             $row->permalink = $this->parser->metadata('permalink');
             array_push($all, $row);
-
         };
-        usort($all, function( $a, $b ) {
+        usort($all, function ($a, $b) {
             return strtotime($b->date) - strtotime($a->date);
         });
 
@@ -83,7 +81,7 @@ class FilePostRepository implements PostRepositoryInterface
             $key = 'id';
             $value = $condition;
         } else {
-            $key =  key($condition);
+            $key = key($condition);
             $value = $condition[$key];
         }
         foreach ($this->all() as $post) {
@@ -92,7 +90,7 @@ class FilePostRepository implements PostRepositoryInterface
             }
         }
 
-        return null;
+        return;
     }
 
     public function store($data)
@@ -100,13 +98,13 @@ class FilePostRepository implements PostRepositoryInterface
         if (!isset($data['title'])) {
             throw new Exception('Title not defined');
         }
-        $post =  [];
-        $post['type'] = (isset($data['type']) and $data['type']=='page') ? $data['type'] : 'article' ;
+        $post = [];
+        $post['type'] = (isset($data['type']) and $data['type'] == 'page') ? $data['type'] : 'article';
         $post['title'] = $data['title'];
-        $post['date'] = (isset($data['date'])and strtotime($data['date'])) ? date(Config::get('skorry.date_format'), strtotime($data['date'])) : date(Config::get('skorry.date_format'));
+        $post['date'] = (isset($data['date']) and strtotime($data['date'])) ? date(Config::get('skorry.date_format'), strtotime($data['date'])) : date(Config::get('skorry.date_format'));
         $post['comments'] = isset($data['comments']) ? true : false;
-        $post['external_url'] = isset($data['external_url']) ? $data['external_url'] : null ;
-        $post['tags'] = isset($data['tags']) ? $data['tags'] : null ;
+        $post['external_url'] = isset($data['external_url']) ? $data['external_url'] : null;
+        $post['tags'] = isset($data['tags']) ? $data['tags'] : null;
         $post['permalink'] = \Str::slug($data['title'], '-');
 
         $mdFile = "{$this->parser->delimiter()}\n";
@@ -120,7 +118,7 @@ class FilePostRepository implements PostRepositoryInterface
             throw new Exception('This post already exists');
         }
 
-        File::put( $filname ,$mdFile );
+        File::put($filname, $mdFile);
 
         return "Your post was created on: $filname";
     }
@@ -137,7 +135,7 @@ class FilePostRepository implements PostRepositoryInterface
     {
         $file = "{$this->directory}{$name}";
         if (!File::exists($file)) {
-            throw new Exception('This post not exists,' . $file);
+            throw new Exception('This post not exists,'.$file);
         }
         File::delete($file);
 

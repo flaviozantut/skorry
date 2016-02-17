@@ -1,4 +1,5 @@
 <?php
+
 namespace Flaviozantut\Storage\Posts;
 
 interface PostRepositoryInterface
@@ -12,5 +13,4 @@ interface PostRepositoryInterface
     public function update($id, $data);
 
     public function destroy($id);
-
 }

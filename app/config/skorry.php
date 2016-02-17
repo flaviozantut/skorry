@@ -1,13 +1,13 @@
 <?php
 
-return array(
+return [
     /*
     |--------------------------------------------------------------------------
     | Titles
     |--------------------------------------------------------------------------
     |
     */
-    'title' => 'Flávio Zantut',
+    'title'    => 'Flávio Zantut',
     'subtitle' => 'Web Developer',
 
     /*
@@ -16,16 +16,16 @@ return array(
     |--------------------------------------------------------------------------
     |
     */
-    "github" => "https://github.com/flaviozantut",
-    "foursquare" => "https://foursquare.com/user/3328297",
-    "instagram" => "http://instagram.com/flaviozantut",
-    "google-plus" => "https://plus.google.com/112100489080294287923",
-    "linkedin" => "http://www.linkedin.com/in/desenvolvedorweb",
-    "twitter" => "https://twitter.com/flaviozantut",
-    "facebook" => "",
-    "pinterest" => "",
-    "stackexchange" => "",
-    "bitbucket" => "",
+    'github'        => 'https://github.com/flaviozantut',
+    'foursquare'    => 'https://foursquare.com/user/3328297',
+    'instagram'     => 'http://instagram.com/flaviozantut',
+    'google-plus'   => 'https://plus.google.com/112100489080294287923',
+    'linkedin'      => 'http://www.linkedin.com/in/desenvolvedorweb',
+    'twitter'       => 'https://twitter.com/flaviozantut',
+    'facebook'      => '',
+    'pinterest'     => '',
+    'stackexchange' => '',
+    'bitbucket'     => '',
 
     /*
     |--------------------------------------------------------------------------
@@ -33,7 +33,7 @@ return array(
     |--------------------------------------------------------------------------
     |
     */
-    "disqus" => "flaviopw",
+    'disqus' => 'flaviopw',
 
     /*
     |--------------------------------------------------------------------------
@@ -41,18 +41,7 @@ return array(
     |--------------------------------------------------------------------------
     |
     */
-    "analytics" => "UA-10815887-4",
-
-
-
-
-
-
-
-
-
-
-
+    'analytics' => 'UA-10815887-4',
 
     /*
     |--------------------------------------------------------------------------
@@ -86,9 +75,6 @@ return array(
     |                  ``--._____.--''
     */
 
-
-
-
     /*
     |--------------------------------------------------------------------------
     | Storage
@@ -107,7 +93,7 @@ return array(
     |  Path to storage and get Posts
     |
     */
-   'path' => base_path(). "/posts/",
+   'path' => base_path().'/posts/',
 
     /*
     |--------------------------------------------------------------------------
@@ -117,23 +103,23 @@ return array(
     |  Number articles per page
     |
     */
-    "paginate" => 10,
+    'paginate' => 10,
 
-    "date_format" => "Y-m-d H:i:s",
-    "date_format_on_post" => "Y-m-d",
-    "metadata_delimiter" => '--------------------------------',
+    'date_format'         => 'Y-m-d H:i:s',
+    'date_format_on_post' => 'Y-m-d',
+    'metadata_delimiter'  => '--------------------------------',
 
-    "assets" => array(
-        "types" => array(
+    'assets' => [
+        'types' => [
             //folder     => type
-            "coffee"     => "coffee",
-            "javascript" => "js",
-            "js"         => "js",
-            "css"        => "css",
-            "less"       => "less",
-            "sass"       => "sass",
-            "stylesheet" => "css",
-        ),
-    ),
+            'coffee'     => 'coffee',
+            'javascript' => 'js',
+            'js'         => 'js',
+            'css'        => 'css',
+            'less'       => 'less',
+            'sass'       => 'sass',
+            'stylesheet' => 'css',
+        ],
+    ],
 
-);
+];

@@ -11,11 +11,11 @@
 |
 */
 
-App::before(function($request) {
+App::before(function ($request) {
     //
 });
 
-App::after(function($request, $response) {
+App::after(function ($request, $response) {
     //
 });
 
@@ -30,11 +30,13 @@ App::after(function($request, $response) {
 |
 */
 
-Route::filter('auth', function() {
-    if (Auth::guest()) return Redirect::guest('login');
+Route::filter('auth', function () {
+    if (Auth::guest()) {
+        return Redirect::guest('login');
+    }
 });
 
-Route::filter('auth.basic', function() {
+Route::filter('auth.basic', function () {
     return Auth::basic();
 });
 
@@ -49,8 +51,10 @@ Route::filter('auth.basic', function() {
 |
 */
 
-Route::filter('guest', function() {
-    if (Auth::check()) return Redirect::to('/');
+Route::filter('guest', function () {
+    if (Auth::check()) {
+        return Redirect::to('/');
+    }
 });
 
 /*
@@ -64,21 +68,18 @@ Route::filter('guest', function() {
 |
 */
 
-Route::filter('csrf', function() {
+Route::filter('csrf', function () {
     if (Session::token() != Input::get('_token')) {
-        throw new Illuminate\Session\TokenMismatchException;
+        throw new Illuminate\Session\TokenMismatchException();
     }
 });
 
-
-
-
-Route::filter('etag', function($route, $request, $response){
+Route::filter('etag', function ($route, $request, $response) {
   $etag = md5($response->getContent());
   $requestETag = str_replace('"', '', $request->getETags());
 
   if ($requestETag && $requestETag[0] == $etag) {
-    $response->setNotModified();
+      $response->setNotModified();
   }
 
   $response->setEtag($etag);
@@ -86,35 +87,32 @@ Route::filter('etag', function($route, $request, $response){
   return;
 });
 
-
-Route::filter('html_minify', function($route, $request, $response){
-    if (App::environment()!='local') {
+Route::filter('html_minify', function ($route, $request, $response) {
+    if (App::environment() != 'local') {
         $response->setContent(preg_replace(
-            array(
+            [
                 '/ {2,}/',
-                '/<!--.*?-->|\t|(?:\r?\n[ \t]*)+/s'
-            ),
-            array(
+                '/<!--.*?-->|\t|(?:\r?\n[ \t]*)+/s',
+            ],
+            [
                 ' ',
-                ''
-            ),
+                '',
+            ],
             $response->getContent()
         ));
+
         return $response;
     }
+
     return;
 });
 
-Route::filter('cache', function($route, $request, $response = null)
-{
-    if (App::environment()!='local') {
+Route::filter('cache', function ($route, $request, $response = null) {
+    if (App::environment() != 'local') {
         $key = 'route-'.Str::slug(Request::url());
-        if(is_null($response) && Cache::has($key))
-        {
+        if (is_null($response) && Cache::has($key)) {
             return Cache::get($key);
-        }
-        elseif(!is_null($response) && !Cache::has($key))
-        {
+        } elseif (!is_null($response) && !Cache::has($key)) {
             Cache::put($key, $response->getContent(), 30);
         }
     }

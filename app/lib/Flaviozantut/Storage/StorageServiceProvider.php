@@ -1,17 +1,18 @@
 <?php
+
 namespace Flaviozantut\Storage;
 
+use Config;
 use Flaviozantut\Storage\Posts\FilePostRepository;
 use Illuminate\Support\ServiceProvider;
-use Config;
 
 class StorageServiceProvider extends ServiceProvider
 {
-  public function register()
-  {
-    $this->app->bind(
+    public function register()
+    {
+        $this->app->bind(
         'Flaviozantut\Storage\Posts\PostRepositoryInterface',
-        function() {
+        function () {
             switch (Config::get('skorry.storage')) {
                 default:
                     return new FilePostRepository(Config::get('skorry.path'));
@@ -19,6 +20,5 @@ class StorageServiceProvider extends ServiceProvider
             }
         }
     );
-  }
-
+    }
 }
