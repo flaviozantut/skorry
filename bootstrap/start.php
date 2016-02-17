@@ -11,7 +11,7 @@
 |
 */
 
-$app = new Illuminate\Foundation\Application;
+$app = new Illuminate\Foundation\Application();
 
 $app->redirectIfTrailingSlash();
 
@@ -26,11 +26,11 @@ $app->redirectIfTrailingSlash();
 |
 */
 
-$env = $app->detectEnvironment(array(
+$env = $app->detectEnvironment([
 
-	'local' => array('machine'),
+    'local' => ['machine'],
 
-));
+]);
 
 /*
 |--------------------------------------------------------------------------

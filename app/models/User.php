@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
+use Illuminate\Auth\UserInterface;
 
 class User extends Eloquent implements UserInterface, RemindableInterface
 {
@@ -17,7 +17,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface
      *
      * @var array
      */
-    protected $hidden = array('password');
+    protected $hidden = ['password'];
 
     /**
      * Get the unique identifier for the user.
@@ -48,5 +48,4 @@ class User extends Eloquent implements UserInterface, RemindableInterface
     {
         return $this->email;
     }
-
 }

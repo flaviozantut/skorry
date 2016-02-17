@@ -89,6 +89,7 @@ class FilePostRepositoryTest extends TestCase
         ]);
         $this->assertTrue($post);
     }
+
     /**
      * @expectedException Exception
      */
@@ -115,5 +116,4 @@ class FilePostRepositoryTest extends TestCase
         $repository = new PostRepository($this->getFixture(''));
         $post = $repository->destroy('not-exist-file.md');
     }
-
 }

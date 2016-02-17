@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Console\Command;
-use Symfony\Component\Console\Input\InputOption;
-use Flaviozantut\Storage\Posts\PostRepositoryInterface;
 
 class ClearAssetsCommand extends Command
 {
@@ -20,7 +18,6 @@ class ClearAssetsCommand extends Command
      */
     protected $description = 'Remove generated assets automatically';
 
-
     /**
      * Execute the console command.
      *
@@ -28,9 +25,8 @@ class ClearAssetsCommand extends Command
      */
     public function fire()
     {
-        File::deleteDirectory(public_path() . '/assets');
-        $this->info("Assets cleared!");
-
+        File::deleteDirectory(public_path().'/assets');
+        $this->info('Assets cleared!');
     }
 
     /**
@@ -40,7 +36,7 @@ class ClearAssetsCommand extends Command
      */
     protected function getArguments()
     {
-        return array();
+        return [];
     }
 
     /**
@@ -50,7 +46,6 @@ class ClearAssetsCommand extends Command
      */
     protected function getOptions()
     {
-        return array();
+        return [];
     }
-
 }

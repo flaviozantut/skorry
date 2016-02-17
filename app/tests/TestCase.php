@@ -18,7 +18,6 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
 
     public function getFixture($name)
     {
-        return sys_get_temp_dir() . '/';
+        return sys_get_temp_dir().'/';
     }
-
 }

@@ -4,7 +4,7 @@ use Flaviozantut\Parser;
 
 class ParserTest extends TestCase
 {
-     /**
+    /**
      * @expectedException Exception
      */
     public function testParserMetadataException()
@@ -16,7 +16,7 @@ class ParserTest extends TestCase
     {
         $delimiter = Config::get('skorry.metadata_delimiter');
 
-        $content =  "$delimiter
+        $content = "$delimiter
 type: article
 title: \"Hello from skorry\"
 date: 2011-07-03 5:59
@@ -58,5 +58,4 @@ Hello";
         $content = $parser->content();
         $this->assertEquals('<p>Hello</p>', $content);
     }
-
 }
